@@ -2,21 +2,32 @@
 <html lang = "en">
 <head>
   <meta charset="UTF-8">
-  <title>My First CrUD App</title>
+  <title>Sean's CrUD App</title>
   <script src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous"></script>
-
-  <script src="libs/jquery.js"></script>        
-
+          crossorigin="anonymous"></script>       
   <script src="app.js"></script>
 </head>
 
 <body>
-  <input class="textField" type="text" name="firstInputField">
-  <button class="setData">Save Text</button>
-  <button class="getData">Get Text</button>
-
-  <div class="debug"></div>
+  <div class ="header-container">
+    <h1>Sean's Snippets</h1>
+  </div>
+  <div class="body-container">
+      <p>Title of Snippet</p>
+      <input class="textField" type="text" name="Title of Snippet">
+      <p>Snippet</p>
+      <textarea class="textArea" rows="20" cols="50" wrap ="hard"></textarea>   
+      <button class="setData">Save Snippet</button>
+  </div>
+   <div class="bottom-container">
+      <p>Search Snippets</p>
+      <input class="searchBar" type="text" name="search">
+      <button type="button" class="search">Search</button>
+      <button class="getData">Retrieve Snippet</button>
+      </div>
+  
+  <div class="textArea"></div>
 </body>
+
 </html>
