@@ -1,16 +1,20 @@
 $(document).ready(function() {
- 
+ var storedData = {};
+
  $('.setData').on('click', function() {
     let textFieldValue = $('.textField').val();
     //$('.debug').text(textFieldValue);
 
     let textAreaValue = $('.textArea').val();
-    //$('.debug').text(textAreaValue);
 
-    localStorage.setItem('myFormTextData', textFieldValue);
+    storedData[textFieldValue] = textAreaValue;
+
+    $('.debug').text(textAreaValue);
+
+    localStorage.setItem('myFormTextData', JSON.stringify(storedData));
    $('.textField').val('');
 
-   localStorage.setItem('myFormTextArea', textAreaValue);
+   localStorage.setItem('myFormTextAreaData', JSON.stringify(storedData));
    $('.textArea').val('');
 
 });
@@ -22,7 +26,7 @@ $(document).ready(function() {
    let retrievedTextAreaData = localStorage.getItem('myFormTextArea');
    //$('.debug').text(retrievedTextAreaData);
 
-   $('.textArea').text(retrievedTextAreaData);
+   $('.debug').text(retrievedTextAreaData);
  });
 
  // $('.textField').on('keyup', function() {

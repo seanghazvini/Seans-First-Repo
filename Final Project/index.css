@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+button, input[type="text"] {
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.add-button{
+  padding: 12px 13px 11px 13px;
+    font-size: 12px;
+    font-family: SANS-SERIF;
+    line-height: 9px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.add-button:hover{
+  padding: 12px 13px 11px 13px;
+    font-size: 12px;
+    font-family: SANS-SERIF;
+    line-height: 9px;
+    background-color: #7DC1EF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.add-button:active{
+  padding: 12px 13px 11px 13px;
+    font-size: 12px;
+    font-family: SANS-SERIF;
+    line-height: 9px;
+    background-color: #1B6A9E;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+button.project-item-toggle.js-item-toggle {
+    background-color: #FFEAD3;
+    border: 0px;
+    color: limegreen;
+  }
+
+button.project-item-delete.js-item-delete {
+  background-color: #FFEAD3;
+    border: 0px;
+    color: red;
+}
+
+
+.header-area {
+  background-color: #3c4452;
+  height: 80px;
+  margin-top: -20px;
+}
+
+.header-title {
+  text-align: center;
+  padding-top: 20px;
+  color: white;
+}
+
+#js-project-list-form {
+  padding-top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+#project-list-item {
+  width: 250px;
+}
+
+.js-project-list-entry {
+  width: 394px;
+  padding: 3px 15px 6px 15px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.project-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-list > li {
+  margin-bottom: 10px;
+    /* border: 1px solid grey; */
+    padding: 20px;
+    background-color: #FFEAD3;
+    border-radius: 3px;
+}
+
+.project-item {
+  display: block;
+  color: grey;
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 15px;
+
+}
+
+.project-item-controls {
+  text-align: right;
+    margin-top: -35px;
+}
+
+.project-item__finished {
+  text-decoration: line-through;
+
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+}
+
+
