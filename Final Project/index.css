@@ -13,46 +13,28 @@ button:hover {
   cursor: pointer;
 }
 
-.add-button{
-  padding: 12px 13px 11px 13px;
-    font-size: 12px;
-    font-family: SANS-SERIF;
-    line-height: 9px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 3px;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
 }
 
-.add-button:hover{
-  padding: 12px 13px 11px 13px;
-    font-size: 12px;
-    font-family: SANS-SERIF;
-    line-height: 9px;
-    background-color: #7DC1EF;
-    color: white;
-    border: none;
-    border-radius: 3px;
-}
-
-.add-button:active{
-  padding: 12px 13px 11px 13px;
-    font-size: 12px;
-    font-family: SANS-SERIF;
-    line-height: 9px;
-    background-color: #1B6A9E;
-    color: white;
-    border: none;
-    border-radius: 3px;
-}
-
-button.project-item-toggle.js-item-toggle {
+button.project-toggle.js-project-toggle {
     background-color: #FFEAD3;
     border: 0px;
     color: limegreen;
   }
 
-button.project-item-delete.js-item-delete {
+button.project-delete.js-project-delete {
   background-color: #FFEAD3;
     border: 0px;
     color: red;
@@ -63,6 +45,39 @@ button.project-item-delete.js-item-delete {
   background-color: #3c4452;
   height: 80px;
   margin-top: -20px;
+}
+
+.add-button{
+  padding: 12px 13px 11px 13px;
+  font-size: 12px;
+  font-family: SANS-SERIF;
+  line-height: 9px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.add-button:hover{
+  padding: 12px 13px 11px 13px;
+  font-size: 12px;
+  font-family: SANS-SERIF;
+  line-height: 9px;
+  background-color: #7DC1EF;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.add-button:active{
+  padding: 12px 13px 11px 13px;
+  font-size: 12px;
+  font-family: SANS-SERIF;
+  line-height: 9px;
+  background-color: #1B6A9E;
+  color: white;
+  border: none;
+  border-radius: 3px;
 }
 
 .header-title {
@@ -79,7 +94,7 @@ button.project-item-delete.js-item-delete {
   display: none;
 }
 
-#project-list-item {
+#project-list {
   width: 250px;
 }
 
@@ -100,13 +115,12 @@ button.project-item-delete.js-item-delete {
 
 .project-list > li {
   margin-bottom: 10px;
-    /* border: 1px solid grey; */
     padding: 20px;
     background-color: #FFEAD3;
     border-radius: 3px;
 }
 
-.project-item {
+.project{
   display: block;
   color: grey;
   font-style: italic;
@@ -115,30 +129,15 @@ button.project-item-delete.js-item-delete {
 
 }
 
-.project-item-controls {
+.project-controls {
   text-align: right;
     margin-top: -35px;
 }
 
-.project-item__finished {
+.project_finished {
   text-decoration: line-through;
-
 }
 
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-}
 
 

@@ -1,84 +1,85 @@
-const storeData = [
-  {name: "project one", finished: true},
-  {name: "project two", finished: false},
-  {name: "project three", finished: false},
-];
-
-function generateItemElement(item, itemIndex, template) {
-  return `
-    <li class="js-item-index-element" data-item-index="${itemIndex}">
-      <span class="project-item js-project-item ${item.finished ? "project-item__finished" : ''}" > ${item.name}</span>
-      <div class="project-item-controls">
-        <button class="project-item-toggle js-item-toggle">
-            <span class="button-label"><i class="material-icons">done</i></span>
-        </button>
-        <button class="project-item-delete js-item-delete">
-            <span class="button-label"><i class="material-icons">delete</i></span>
-        </button>
-      </div>
-    </li>`;
-}
-
-function generateProjectItemsString(projectList) {
-  const items = projectList.map((item, index) => generateItemElement(item, index));
-  return items.join("");
+function generateProjectsString(projectList) {
+  const Projects = projectList.map((project, index) => generateprojectElement(project, index));
+  return Projects.join("");
 }
 
 function renderProjectList() {
-  const projectListItemsString = generateProjectItemsString(storeData);
-  $('.js-project-list').html(projectListItemsString);
+  const listProjects = generateProjectsString(storeData);
+  $('.js-project-list').html(listProjects);
 }
 
-function addItemToProjectList(itemName) {
-  storeData.push({name: itemName, finished: false});
+function addprojectToProjectList(projectName) {
+  storeData.push({name: projectName, finished: false});
 }
 
-function handleNewItemSubmit() {
+function addNewProject() {
   $('#js-project-list-form').submit(function(event) {
     event.preventDefault();
-    const newItemName = $('.js-project-list-entry').val();
+    
+    const newProjectName = $('.js-project-list-entry').val();
     $('.js-project-list-entry').val('');
-    addItemToProjectList(newItemName);
+    addprojectToProjectList(newProjectName);
     renderProjectList();
   });
 }
 
-function deleteListItem(itemIndex) {
-  storeData.splice(itemIndex, 1); 
+function deleteListproject(projectIndex) {
+  storeData.splice(projectIndex, 1); 
 }
 
-function toggleFinishedForListItem(itemIndex) {
-  storeData[itemIndex].finished = !storeData[itemIndex].finished;
+function finishedproject(projectIndex) {
+  storeData[projectIndex].finished = !storeData[projectIndex].finished;
 }
 
-function getItemIndexFromElement(item) {
-  const itemIndexString = $(item)
-    .closest('.js-item-index-element')
-    .attr('data-item-index');
-  return parseInt(itemIndexString, 10);
+function getprojectIndexFromElement(project) {
+  const projectIndexString = $(project)
+    .closest('.js-project-index-element')
+    .attr('data-project-index');
+  return parseInt(projectIndexString, 10);
 }
 
-function handleItemCheckClicked() {
-  $('.js-project-list').on('click', `.js-item-toggle`, event => {
-    const itemIndex = getItemIndexFromElement(event.currentTarget);
-    toggleFinishedForListItem(itemIndex);
+function projectChecked() {
+  $('.js-project-list').on('click', `.js-project-toggle`, event => {
+    const projectIndex = getprojectIndexFromElement(event.currentTarget);
+    finishedproject(projectIndex);
     renderProjectList();
   });
 }
 
-function handleDeleteItemClicked() {
-  $('.js-project-list').on('click', '.js-item-delete', event => { 
-    const itemIndex = getItemIndexFromElement(event.currentTarget);
-    deleteListItem(itemIndex);
+function deleteproject() {
+  $('.js-project-list').on('click', '.js-project-delete', event => { 
+    const projectIndex = getprojectIndexFromElement(event.currentTarget);
+    deleteListproject(projectIndex);
     renderProjectList();
   });
 }
 
 function runFunctions() {
   renderProjectList();
-  handleNewItemSubmit();
-  handleItemCheckClicked();
-  handleDeleteItemClicked();
+  addNewProject();
+  projectChecked();
+  deleteproject();
 }
 
 $(runFunctions);
+
+const storeData = [
+  {name: "project one", finished: true},
+  {name: "project two", finished: false},
+  {name: "project three", finished: false},
+];
+
+function generateprojectElement(project, projectIndex, template) {
+  return `
+    <li class="js-project-index-element" data-project-index="${projectIndex}">
+      <span class="project js-project ${project.finished ? "project_finished" : ''}" > ${project.name}</span>
+      <div class="project-controls">
+        <button class="project-toggle js-project-toggle">
+            <span class="button-label"><i class="material-icons">done</i></span>
+        </button>
+        <button class="project-delete js-project-delete">
+            <span class="button-label"><i class="material-icons">delete</i></span>
+        </button>
+      </div>
+    </li>`;
+}
